@@ -30,7 +30,7 @@ function request(url) {
       "result"
     ).innerHTML = 'Ingredients : ' + information.product.ingredients_text.replaceAll("*", "");
   console.log(information) 
-    document.getElementById("quantity").innerHTML = ' Quantité : ' + information.product.quantity;
+    document.getElementById("quantity").innerHTML = ' Quantité ' + information.product.quantity;
     document.getElementById("trace").innerHTML = 'Ingredient avec un risque d' + "'" + 'allergie : ' + information.product.allergens.replaceAll('en:','');
     document.getElementById("scoreIMG").src =
       "https://static.openfoodfacts.org/images/attributes/dist/nutriscore-" +
@@ -50,7 +50,7 @@ function request(url) {
   
   let html5QrcodeScanner = new Html5QrcodeScanner(
     "reader",
-    { fps: 10, qrbox: { width: 250, height: 250 } },
+    { fps: 15, qrbox: { width: 310, height: 300 } },
     /* verbose= */ false
   );
   html5QrcodeScanner.render(onScanSuccess, onScanFailure);
